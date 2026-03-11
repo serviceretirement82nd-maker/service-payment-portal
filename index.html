@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Service Payment Portal</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+padding:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+max-width:500px;
+margin:auto;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+input,button,select{
+width:100%;
+padding:10px;
+margin-top:10px;
+}
+
+h2{
+color:#1B365D;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Service Member Login</h2>
+
+<input id="serviceNumber" placeholder="Service Number">
+
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<div id="dashboard" style="display:none">
+
+<h2>Member Dashboard</h2>
+
+<p>Cart Item: Ration Pack</p>
+
+<p>Price: 10 JOD</p>
+
+<p>Wallet Address:</p>
+
+<p id="wallet">
+1TestBitcoinAddressABC
+</p>
+
+<input id="amount" placeholder="Amount">
+
+<select id="currency">
+
+<option>JOD</option>
+<option>USD</option>
+<option>BTC</option>
+
+</select>
+
+<button onclick="pay()">Confirm Payment</button>
+
+<p id="confirm"></p>
+
+</div>
+
+</div>
+
+<script>
+
+function login(){
+
+let service=document.getElementById("serviceNumber").value
+let pass=document.getElementById("password").value
+
+if(service=="12345" && pass=="pass123"){
+
+document.getElementById("dashboard").style.display="block"
+
+}else{
+
+alert("Invalid Login")
+
+}
+
+}
+
+function pay(){
+
+let id=Math.floor(Math.random()*1000000000)
+
+document.getElementById("confirm").innerHTML=
+"Payment Recorded. Transaction ID: "+id
+
+}
+
+</script>
+
+</body>
+
+</html>
